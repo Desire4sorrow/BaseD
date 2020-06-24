@@ -62,8 +62,8 @@ SELECT specialization, COUNT(placement) AS count_placement FROM stadium GROUP BY
 --SELECT GROUP BY + HAVING
 --8.1. 3 запроса с GROUP BY + HAVING
 SELECT fist_name, COUNT(age) AS count_age FROM sportsman GROUP BY first_name HAVING COUNT(age) < 10; 
-SELECT placement, AVG(capacity) AS avg_capacity FROM stadium GROUP BY placement HAVING AVG(capacity) > 5000; --список мест и среднюю вместимость, где средняя вместимость стадионов > 5000.
-SELECT specialization, MAX(capacity) AS max_capacity FROM stadium GROUP BY specialization HAVING MIN(height) > 100; --направление и максимальную вместимость, где минимальная высота > 100 
+SELECT placement, AVG(capacity) AS avg_capacity FROM stadium GROUP BY placement HAVING AVG(capacity) > 5000; 
+SELECT specialization, MAX(capacity) AS max_capacity FROM stadium GROUP BY specialization HAVING MIN(height) > 100; 
 
 --SELECT JOIN
 --9.1. LEFT JOIN + WHERE.
@@ -82,6 +82,6 @@ SELECT * FROM perfomance FULL OUTER JOIN stadium on perfomance.id_perfomance = s
 
 --ПОДЗАПРОСЫ
 --Запрос с подзапросом WHERE IN.
-SELECT first_name, last_name, gender, birthday FROM sportsman WHERE id_perfomance IN(SELECT id_perfomance FROM perfomance WHERE date = '2019-12-11'); --Данные спортсмена, выступавшего 11 декабря 19 года.
+SELECT first_name, last_name, gender, birthday FROM sportsman WHERE id_perfomance IN(SELECT id_perfomance FROM perfomance WHERE date = '2019-12-11'); 
 --SELECT atr1, atr2, (подзапрос) FROM ...
-SELECT date, type, (SELECT id_sportsman_on_competition FROM sportsman WHERE sportsman.id_perfomance = perfomance.id_perfomance) AS id_sportsmans_perfomance FROM perfomance;  --вывод даты, вида и id выступления спортсмена. 
+SELECT date, type, (SELECT id_sportsman_on_competition FROM sportsman WHERE sportsman.id_perfomance = perfomance.id_perfomance) AS id_sportsmans_perfomance FROM perfomance;  
