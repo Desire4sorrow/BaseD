@@ -61,7 +61,7 @@ SELECT specialization, COUNT(placement) AS count_placement FROM stadium GROUP BY
 
 --SELECT GROUP BY + HAVING
 --8.1. 3 запроса с GROUP BY + HAVING
-SELECT fist_name, COUNT(age) AS count_age FROM sportsman GROUP BY first_name HAVING COUNT(age) < 10; 
+SELECT fist_name, SUM(age) AS sum_age FROM sportsman GROUP BY first_name HAVING SUN(age) < 100; 
 SELECT placement, AVG(capacity) AS avg_capacity FROM stadium GROUP BY placement HAVING AVG(capacity) > 5000; 
 SELECT specialization, MAX(capacity) AS max_capacity FROM stadium GROUP BY specialization HAVING MIN(height) > 100; 
 
