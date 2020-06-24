@@ -84,4 +84,4 @@ SELECT * FROM perfomance FULL OUTER JOIN stadium on perfomance.id_perfomance = s
 --Запрос с подзапросом WHERE IN.
 SELECT first_name, last_name, gender, birthday FROM sportsman WHERE id_perfomance IN(SELECT id_perfomance FROM perfomance WHERE date = '2019-12-11'); --Данные спортсмена, выступавшего 11 декабря 19 года.
 --SELECT atr1, atr2, (подзапрос) FROM ...
-SELECT date, price, (SELECT id_sportsman_on_competition FROM sportsman WHERE sportsman.id_perfomance = perfomance.id_perfomance) AS id_sportsmans_perfomance FROM perfomance;  --вывод даты, цены и id выступления спортсмена. 
+SELECT date, type, (SELECT id_sportsman_on_competition FROM sportsman WHERE sportsman.id_perfomance = perfomance.id_perfomance) AS id_sportsmans_perfomance FROM perfomance;  --вывод даты, вида и id выступления спортсмена. 
